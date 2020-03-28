@@ -13,6 +13,7 @@ namespace DG.Tweening.Core
         public const string AssetName = "DOTweenSettings";
         public const string AssetFullFilename = AssetName + ".asset";
 
+        public bool useCallstackDebug = false;
         public bool useSafeMode = true;
         public SafeModeOptions safeModeOptions = new SafeModeOptions();
         public float timeScale = 1;

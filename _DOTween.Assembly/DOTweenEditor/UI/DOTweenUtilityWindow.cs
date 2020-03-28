@@ -254,6 +254,7 @@ namespace DG.DOTweenEditor.UI
                 EditorUtility.SetDirty(_src);
             }
             GUILayout.Space(8);
+            _src.useCallstackDebug = EditorGUILayout.Toggle("Callstack Debug", _src.useCallstackDebug);
             _src.useSafeMode = EditorGUILayout.Toggle("Safe Mode", _src.useSafeMode);
             if (_src.useSafeMode) {
                 _src.safeModeOptions.nestedTweenFailureBehaviour = (NestedTweenFailureBehaviour)EditorGUILayout.EnumPopup(

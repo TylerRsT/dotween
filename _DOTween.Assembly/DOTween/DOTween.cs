@@ -43,6 +43,10 @@ namespace DG.Tweening
         /// (like targets becoming null while a tween is playing).
         /// <para>Default: TRUE</para></summary>
         public static bool useSafeMode = true;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool useCallstackDebug = false;
         /// <summary>Behaviour in case a tween nested inside a Sequence fails (caught by safe mode).
         /// <para>Default: NestedTweenFailureBehaviour.TryToPreserveSequence</para></summary>
         public static NestedTweenFailureBehaviour nestedTweenFailureBehaviour = NestedTweenFailureBehaviour.TryToPreserveSequence;
@@ -208,11 +212,26 @@ namespace DG.Tweening
                 // Debug options
                 DOTween.debugMode = settings.debugMode;
                 DOTween.debugStoreTargetId = settings.debugStoreTargetId;
+                DOTween.useCallstackDebug = settings.useCallstackDebug;
             }
             // Log
             if (Debugger.logPriority >= 2) Debugger.Log("DOTween initialization (useSafeMode: " + DOTween.useSafeMode + ", recycling: " + (DOTween.defaultRecyclable ? "ON" : "OFF") + ", logBehaviour: " + DOTween.logBehaviour + ")");
 
             return instance;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tween"></param>
+        /// <returns></returns>
+        public static string GetTweenCallstack(ABSSequentiable tween)
+        {
+            if(useCallstackDebug)
+            {
+                return $"Callstack : {tween.callstack}";
+            }
+            return string.Empty;
         }
 
         /// <summary>

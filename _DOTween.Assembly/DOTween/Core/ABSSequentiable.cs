@@ -15,5 +15,18 @@ namespace DG.Tweening.Core
 
         /// <summary>Called the first time the tween is set in a playing state, after any eventual delay</summary>
         internal TweenCallback onStart; // Used also by SequenceCallback as main callback
+
+        public string callstack { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ABSSequentiable()
+        {
+            if(DOTween.useCallstackDebug)
+            {
+                callstack = new System.Diagnostics.StackTrace().ToString();
+            }
+        }
     }
 }

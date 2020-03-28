@@ -29,6 +29,11 @@
         <member name="F:DG.Tweening.Core.ABSSequentiable.onStart">
             <summary>Called the first time the tween is set in a playing state, after any eventual delay</summary>
         </member>
+        <member name="M:DG.Tweening.Core.ABSSequentiable.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:DG.Tweening.Core.DOGetter`1">
             <summary>
             Used in place of <c>System.Func</c>, which is not available in mscorlib.
@@ -330,6 +335,11 @@
             (like targets becoming null while a tween is playing).
             <para>Default: TRUE</para></summary>
         </member>
+        <member name="F:DG.Tweening.DOTween.useCallstackDebug">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="F:DG.Tweening.DOTween.nestedTweenFailureBehaviour">
             <summary>Behaviour in case a tween nested inside a Sequence fails (caught by safe mode).
             <para>Default: NestedTweenFailureBehaviour.TryToPreserveSequence</para></summary>
@@ -443,6 +453,13 @@
             <param name="logBehaviour">Type of logging to use.
             You can change this setting at any time by changing the static <see cref="P:DG.Tweening.DOTween.logBehaviour"/> property.
             <para>Default: ErrorsOnly</para></param>
+        </member>
+        <member name="M:DG.Tweening.DOTween.GetTweenCallstack(DG.Tweening.Core.ABSSequentiable)">
+            <summary>
+            
+            </summary>
+            <param name="tween"></param>
+            <returns></returns>
         </member>
         <member name="M:DG.Tweening.DOTween.SetTweensCapacity(System.Int32,System.Int32)">
             <summary>
